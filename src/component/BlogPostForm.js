@@ -14,11 +14,11 @@ const BlogPostForm = ({onSubmit, initialValues}) => {
       />
       <Text style={[styles.label]}>Enter Content:</Text>
       <TextInput
-        style={[styles.input,{marginBottom:40}]}
+        style={[styles.input, {marginBottom: 40}]}
         value={content}
         onChangeText={text => setContent(text)}
       />
-      <Button  title="Save Blog Post" onPress={() => onSubmit(title, content)} />
+      <Button title="Save Blog Post" onPress={() => onSubmit(title, content)} />
     </View>
   );
 };
@@ -37,14 +37,14 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     marginBottom: 15,
     padding: 5,
-    marginHorizontal:10,
-    marginTop:15,
+    marginHorizontal: 10,
+    marginTop: 15,
   },
   label: {
     fontSize: 20,
     marginBottom: 5,
     marginLeft: 5,
-    marginTop:17
+    marginTop: 17,
   },
 });
 

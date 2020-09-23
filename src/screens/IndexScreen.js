@@ -12,7 +12,7 @@ import {Icon} from 'react-native-elements';
 
 const IndexScreen = ({navigation}) => {
   const {state, deleteBlogPost, getBlogPosts} = useContext(Context);
-  
+
   useEffect(() => {
     getBlogPosts();
 
@@ -22,12 +22,10 @@ const IndexScreen = ({navigation}) => {
     return () => {
       listner.remove();
     };
-  }, []);
+  });
 
   return (
     <View>
-  
-
       <FlatList
         data={state}
         keyExtractor={blogPost => blogPost.title}
@@ -38,9 +36,7 @@ const IndexScreen = ({navigation}) => {
                 navigation.navigate('show', {id: item.id});
               }}>
               <View style={styles.row}>
-                <Text style={styles.title}>
-                  {item.title}
-                </Text>
+                <Text style={styles.title}>{item.title}</Text>
                 <TouchableOpacity
                   onPress={() => {
                     deleteBlogPost(item.id);
@@ -60,7 +56,7 @@ IndexScreen.navigationOptions = ({navigation}) => {
   return {
     headerRight: () => (
       <TouchableOpacity onPress={() => navigation.navigate('Create')}>
-        <Icon name="plus" type="feather" size={30}/>
+        <Icon name="plus" type="feather" size={30} />
       </TouchableOpacity>
     ),
   };
